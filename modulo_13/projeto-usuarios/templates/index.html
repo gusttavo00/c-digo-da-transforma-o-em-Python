@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Gerenciamento de Usuários</h1>
+
+    <div id="status-message"></div>
+
+    <h2>Criar e Atualizar Usuário</h2>
+    <form id="user-form">
+        <input type="hidden" id="user-id">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <button type="submit" id="submit-btn">Criar Usuário</button>
+    </form>
+
+    <hr>
+
+    <h2>Lista de Usuários</h2>
+    <div id="usuarios-container"></div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
