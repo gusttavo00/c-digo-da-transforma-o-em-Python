@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+<h1>Produtos</h1>
+<a href="{% url 'criar_produto' %}">Adicionar Produto</a>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Ações</th>
+    </tr>
+    {% for produto in produtos %}
+    <tr>
+        <td>{{ produto.nome }}</td>
+        <td>R$ {{ produto.preco }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>
+            <a href="{% url 'editar_produto' produto.pk %}">Editar</a>
+            <a href="{% url 'excluir_produto' produto.pk %}">Excluir</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">Nenhum produto cadastrado.</td></tr>
+    {% endfor %}
+</table>
+</body>
+</html>
